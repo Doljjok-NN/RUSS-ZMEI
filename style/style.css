@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Miroslav';
+    src: url('../fonts/Мирослав\ Regular.ttf');
+}
+
+body {
+    
+    
+    background-image: url('../img/flag.png');
+    background-size: 100%;
+    overflow: hidden;
+}
+
+.page {
+    width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;
+    
+    
+    /* background-size: cover; */
+}
+    
+.aye {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/page.jpg');
+    opacity: 0.1;
+    z-index: 2;
+    position: absolute;
+}
+
+
+canvas {
+    
+    display: block;
+    margin: 0 auto;
+    border: 2px solid rgb(180, 46, 5);
+}
+
+.header {
+    z-index: 5;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-family: 'Miroslav';
+    color: rgb(3, 0, 5);
+}
+
+.subtitle {
+    font-family: 'Miroslav';
+    font-size: 18px;
+}
