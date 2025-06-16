@@ -33,14 +33,13 @@
   }
 
   .subtitle {
-    font-size: 80%;
+    font-size: 100%;
   }
 }
 
 @media (max-width: 707px) {
-    body {
+  body {
     /* overflow: hidden; */
-    
   }
 
   .page {
@@ -48,24 +47,30 @@
   }
 }
 
+@media (max-width: 515px) {
+  canvas {
+    height: 500px;
+  }
+}
+
 @media (min-width: 900px) {
-    canvas {
-        width: 91%;
-    }
+  canvas {
+    width: 91%;
+  }
 }
 
 @media (min-width: 1400px) {
   canvas {
     width: 60%;
-    height: 60%; 
+    height: 60%;
   }
 
   body {
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 
   .page {
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 }
 
@@ -93,10 +98,8 @@ body {
 } */
 
 canvas {
-  
   display: block;
   margin: 0 auto;
-  
 }
 
 .header {
@@ -108,11 +111,27 @@ canvas {
 }
 
 .title {
+  cursor: pointer;
   font-family: "Miroslav";
-  color: rgb(3, 0, 5);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.57) 12%,
+    rgba(0, 75, 196, 1) 35%,
+    rgba(232, 2, 6, 1) 80%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.5px black;
+}
+
+.title:hover {
+    font-size: 50px;
 }
 
 .subtitle {
   font-family: "Miroslav";
-  /* font-size: 18px; */
+}
+
+.muzloo {
+    text-align: center;
 }
