@@ -1,58 +1,116 @@
 @font-face {
-    font-family: 'Miroslav';
-    src: url('../fonts/Мирослав\ Regular.ttf');
+  font-family: "Miroslav";
+  src: url("../fonts/Мирослав\ Regular.ttf");
+}
+
+@media (max-width: 900px) {
+  body {
+    overflow: scroll;
+  }
+
+  .page {
+    overflow: scroll;
+  }
+
+  canvas {
+    width: 90%;
+    height: 60%;
+  }
+}
+
+@media (max-width: 800px) {
+  canvas {
+    width: 100%;
+  }
+}
+
+@media (max-width: 750px) {
+  .header {
+  }
+
+  .title {
+    font-size: 110%;
+  }
+
+  .subtitle {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 707px) {
+    body {
+    overflow: hidden;
+    
+  }
+
+  .page {
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 900px) {
+    canvas {
+        width: 91%;
+    }
+}
+
+@media (min-width: 1400px) {
+  canvas {
+    width: 60%;
+    height: 60%; 
+  }
+
+  body {
+    /* overflow: hidden; */
+  }
+
+  .page {
+    /* overflow: hidden; */
+  }
 }
 
 body {
-    
-    
-    background-image: url('../img/flag.png');
-    background-size: 100%;
-    overflow: hidden;
+  background-image: url("../img/flag.png");
+  background-size: 100%;
 }
 
 .page {
-    width: 1400px;
-    margin: 0 auto;
-    overflow: hidden;
-    
-    
-    /* background-size: cover; */
-}
-    
-.aye {
-    margin: 0 auto;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    background-image: url('../img/page.jpg');
-    opacity: 0.1;
-    z-index: 2;
-    position: absolute;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
+/* .aye {
+  margin: 0 auto; 
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/page.jpg");
+  opacity: 0.1;
+  z-index: 2;
+  position: absolute;
+} */
 
 canvas {
-    
-    display: block;
-    margin: 0 auto;
-    border: 2px solid rgb(180, 46, 5);
+  
+  display: block;
+  margin: 0 auto;
+  border: 2px solid rgb(180, 46, 5);
 }
 
 .header {
-    z-index: 5;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+  z-index: 5;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
-    font-family: 'Miroslav';
-    color: rgb(3, 0, 5);
+  font-family: "Miroslav";
+  color: rgb(3, 0, 5);
 }
 
 .subtitle {
-    font-family: 'Miroslav';
-    font-size: 18px;
+  font-family: "Miroslav";
+  /* font-size: 18px; */
 }
