@@ -39,7 +39,7 @@
 
 @media (max-width: 707px) {
     body {
-    overflow: hidden;
+    /* overflow: hidden; */
     
   }
 
@@ -61,17 +61,19 @@
   }
 
   body {
-    /* overflow: hidden; */
+    overflow: hidden;
   }
 
   .page {
-    /* overflow: hidden; */
+    overflow: hidden;
   }
 }
 
 body {
+  height: 100%;
   background-image: url("../img/flag.png");
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .page {
@@ -94,7 +96,7 @@ canvas {
   
   display: block;
   margin: 0 auto;
-  border: 2px solid rgb(180, 46, 5);
+  
 }
 
 .header {
