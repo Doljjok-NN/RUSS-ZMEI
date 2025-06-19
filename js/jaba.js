@@ -1,10 +1,25 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
-const klick = document.querySelector('.title')
-klick.addEventListener('click', () =>  {
-    alert('КАКОВ ТВОЙ ГЕНЕТИЧЕСКИЙ КОД?');
-    location.reload();
-})
+const klick = document.querySelector(".title");
+klick.addEventListener("click", () => {
+  alert("КАКОВ ТВОЙ ГЕНЕТИЧЕСКИЙ КОД?");
+  location.reload();
+});
+
+document.addEventListener(
+  "click",
+  function () {
+    const input = document.createElement("input");
+    input.style.position = "fixed";
+    input.style.top = "0";
+    input.style.left = "0";
+    input.style.opacity = "0";
+    document.body.appendChild(input);
+    input.focus();
+    setTimeout(() => input.remove(), 10000);
+  },
+  { once: true }
+); // Одноразовый обработчик
 
 const ground = new Image();
 ground.src = "img/rus.png";
@@ -65,8 +80,6 @@ function eatTail(head, arr) {
   }
 }
 
-
-
 function drawGame() {
   ctx.drawImage(ground, 0, 0);
   ctx.drawImage(food, foody.x, foody.y);
@@ -125,4 +138,3 @@ function drawGame() {
 }
 
 let game = setInterval(drawGame, 100);
-
