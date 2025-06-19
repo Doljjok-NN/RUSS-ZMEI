@@ -49,32 +49,32 @@ const right = document
   .addEventListener("touchstart", () => changeDirection("right"));
 
 function changeDirection(dyr) {
-  if (dyr === "up") dir = "up";
-  if (dyr === "left") dir = "left";
-  if (dyr === "down") dir = "down";
-  if (dyr === "right") dir = "right";
+  if (dyr === "up" && dir != 'down') dir = "up";
+  if (dyr === "left" && dir != 'right') dir = "left";
+  if (dyr === "down" && dir != 'up') dir = "down";
+  if (dyr === "right" && dir != 'left') dir = "right";
 }
 
 console.log(up, left, down, right);
 
 function direction(event) {
-  if (event.keyCode === 37) {
+  if (event.keyCode === 37 && dir != 'right') {
     dir = "left";
-  } else if (event.keyCode === 38) {
+  } else if (event.keyCode === 38 && dir != 'down') {
     dir = "up";
-  } else if (event.keyCode === 39) {
+  } else if (event.keyCode === 39 && dir != 'left') {
     dir = "right";
-  } else if (event.keyCode === 40) {
+  } else if (event.keyCode === 40 && dir != 'up') {
     dir = "down";
   }
 
-  if (event.keyCode === 65) {
+  if (event.keyCode === 65 && dir != 'right') {
     dir = "left";
-  } else if (event.keyCode === 87) {
+  } else if (event.keyCode === 87 && dir != 'down') {
     dir = "up";
-  } else if (event.keyCode === 68) {
+  } else if (event.keyCode === 68 && dir != 'left') {
     dir = "right";
-  } else if (event.keyCode === 83) {
+  } else if (event.keyCode === 83 && dir != 'up') {
     dir = "down";
   }
 }
@@ -125,21 +125,16 @@ function drawGame() {
     snake.pop();
   }
 
-  if (snakeX > pole || snakeY > pole || snakeX < -10 || snakeY < -10) {
+  if (snakeX > pole || snakeY > 600 || snakeX < -10 || snakeY < -10) {
     clearInterval(game);
     alert("ТЫ ПОЗОРИШЬ РОДИНУ");
     location.reload();
   }
 
-  if (dir == "left") snakeX -= box;
-  if (dir == "right") snakeX += box;
-  if (dir == "up") snakeY -= box;
-  if (dir == "down") snakeY += box;
-
-  // if (up.addEventListener("touchstart")) snakeY -= box;
-  // if (left.addEventListener("touchstart")) snakeX -= box;
-  // if (down.addEventListener("touchstart")) snakeY += box;
-  // if (right.addEventListener("touchstart")) snakeX += box;
+  if (dir === "left") snakeX -= box;
+  if (dir === "right") snakeX += box;
+  if (dir === "up") snakeY -= box;
+  if (dir === "down") snakeY += box;
 
   let newHead = {
     x: snakeX,
