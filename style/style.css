@@ -126,6 +126,7 @@ body {
 
 canvas {
   display: block;
+  position:static;
   margin: 0 auto;
 }
 
@@ -177,4 +178,48 @@ canvas {
 
 .muzloo {
   text-align: center;
+}
+
+.mobile-controls {
+ 
+  display: none; /* По умолчанию скрыто */
+  
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid red;
+}
+
+.control-btn {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  touch-action: manipulation; /* Улучшает отзывчивость на тач */
+}
+
+.absolut_up {
+  text-align: center;
+  padding: 10px;
+  
+}
+
+.flex_button {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+}
+
+@media (max-width: 768px) {
+  .mobile-controls {
+    
+    display: block;
+    margin:  0 auto;
+  }
+
+  .muzloo {
+    display: none;
+  }
 }

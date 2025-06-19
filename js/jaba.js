@@ -6,21 +6,6 @@ klick.addEventListener("click", () => {
   location.reload();
 });
 
-document.addEventListener(
-  "click",
-  function () {
-    const input = document.createElement("input");
-    input.style.position = "fixed";
-    input.style.top = "0";
-    input.style.left = "0";
-    input.style.opacity = "0";
-    document.body.appendChild(input);
-    input.focus();
-    setTimeout(() => input.remove(), 10000);
-  },
-  { once: true }
-); // Одноразовый обработчик
-
 const ground = new Image();
 ground.src = "img/rus.png";
 
@@ -46,8 +31,15 @@ snake[0] = {
   y: 10 * box,
 };
 
+
+
+
 document.addEventListener("keydown", direction);
 let dir;
+
+
+
+
 function direction(event) {
   if (event.keyCode === 37) {
     dir = "left";
@@ -68,6 +60,10 @@ function direction(event) {
   } else if (event.keyCode === 83) {
     dir = "down";
   }
+
+
+
+
 }
 
 function eatTail(head, arr) {
@@ -90,12 +86,12 @@ function drawGame() {
       i == 0
         ? "transparent"
         : i == 1
-        ? "white"
-        : i == 2
-        ? "blue"
-        : i == 3
-        ? "red"
-        : "black";
+          ? "white"
+          : i == 2
+            ? "blue"
+            : i == 3
+              ? "red"
+              : "black";
     ctx.fillRect(snake[i].x, snake[i].y, box, box);
   }
 
@@ -120,6 +116,32 @@ function drawGame() {
     clearInterval(game);
     alert("ТЫ ПОЗОРИШЬ РОДИНУ");
     location.reload();
+  }
+
+  document.getElementById('up').addEventListener('touchstart', () => changeDirection());
+  document.getElementById('left').addEventListener('touchstart', () => changeDirection('left'));
+  document.getElementById('down').addEventListener('touchstart', () => changeDirection('down'));
+  document.getElementById('right').addEventListener('touchstart', () => changeDirection('right'));
+
+  function changeDirection(dir) {
+    if (dir === 'up' && currentDirection !== 'down') {
+      currentDirection = 'up'
+      snakeY -= box;
+
+    };
+    if (dir === 'left' && currentDirection !== 'right') {
+      currentDirection = 'left'
+      snakeX -= box
+    };
+    if (dir === 'down' && currentDirection !== 'up') {
+      currentDirection = 'down';
+      snakeY += box;
+    }
+    if (dir === 'right' && currentDirection !== 'left') {
+      currentDirection = 'right';
+      snakeX += box;
+    }
+       
   }
 
   if (dir == "left") snakeX -= box;
