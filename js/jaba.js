@@ -34,17 +34,28 @@ snake[0] = {
 document.addEventListener("keydown", direction);
 
 let dir;
-let mobil_snake;
 
-const ober = document.querySelector(".mobile-controls");
-console.log(ober);
+const up = document
+  .getElementById("up")
+  .addEventListener("touchstart", () => changeDirection("up"));
+const left = document
+  .getElementById("left")
+  .addEventListener("touchstart", () => changeDirection("left"));
+const down = document
+  .getElementById("down")
+  .addEventListener("touchstart", () => changeDirection("down"));
+const right = document
+  .getElementById("right")
+  .addEventListener("touchstart", () => changeDirection("right"));
 
-const up = document.querySelector(".up");
-const left = document.querySelector(".left");
-const down = document.getElementById("#down");
-const right = document.getElementById("#right");
+function changeDirection(dyr) {
+  if (dyr === "up") dir = "up";
+  if (dyr === "left") dir = "left";
+  if (dyr === "down") dir = "down";
+  if (dyr === "right") dir = "right";
+}
 
-console.log(up);
+console.log(up, left, down, right);
 
 function direction(event) {
   if (event.keyCode === 37) {
@@ -125,10 +136,10 @@ function drawGame() {
   if (dir == "up") snakeY -= box;
   if (dir == "down") snakeY += box;
 
-  if (up.addEventListener("touchstart")) snakeY -= box;
-  if (left.addEventListener("touchstart")) snakeX -= box;
-  if (down.addEventListener("touchstart")) snakeY += box;
-  if (right.addEventListener("touchstart")) snakeX += box;
+  // if (up.addEventListener("touchstart")) snakeY -= box;
+  // if (left.addEventListener("touchstart")) snakeX -= box;
+  // if (down.addEventListener("touchstart")) snakeY += box;
+  // if (right.addEventListener("touchstart")) snakeX += box;
 
   let newHead = {
     x: snakeX,
