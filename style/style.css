@@ -181,7 +181,7 @@ canvas {
 }
 
 .mobile-controls {
-  display: none; /* По умолчанию скрыто */
+  display: none;
   justify-content: center;
   gap: 10px;
 }
