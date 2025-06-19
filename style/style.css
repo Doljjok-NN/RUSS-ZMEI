@@ -126,7 +126,7 @@ body {
 
 canvas {
   display: block;
-  position:static;
+  position: static;
   margin: 0 auto;
 }
 
@@ -181,12 +181,9 @@ canvas {
 }
 
 .mobile-controls {
- 
   display: none; /* По умолчанию скрыто */
-  
   justify-content: center;
   gap: 10px;
-  border: 1px solid red;
 }
 
 .control-btn {
@@ -203,7 +200,6 @@ canvas {
 .absolut_up {
   text-align: center;
   padding: 10px;
-  
 }
 
 .flex_button {
@@ -214,9 +210,8 @@ canvas {
 
 @media (max-width: 768px) {
   .mobile-controls {
-    
     display: block;
-    margin:  0 auto;
+    margin: 0 auto;
   }
 
   .muzloo {
