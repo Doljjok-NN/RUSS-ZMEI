@@ -3,94 +3,6 @@
   src: url("../fonts/Мирослав\ Regular.ttf");
 }
 
-@media (max-width: 900px) {
-  body {
-    overflow: scroll;
-  }
-
-  .page {
-    overflow: scroll;
-  }
-
-  canvas {
-    width: 90%;
-    height: 60%;
-  }
-}
-
-@media (max-width: 800px) {
-  canvas {
-    width: 100%;
-  }
-}
-
-@media (max-width: 750px) {
-  .header {
-  }
-
-  .title {
-    font-size: 110%;
-  }
-
-  .subtitle {
-    font-size: 100%;
-  }
-}
-
-@media (max-width: 553px) {
-  .subtitle {
-    text-align: center;
-    color: white;
-  }
-
-  .muzloo {
-    display: none;
-  }
-}
-
-@media (max-width: 757px) {
-  .subtitle {
-    color: rgb(251, 251, 250);
-  }
-}
-
-@media (max-width: 707px) {
-  body {
-    /* overflow: hidden; */
-  }
-
-  .page {
-    overflow: hidden;
-  }
-}
-
-@media (max-width: 515px) {
-  canvas {
-    height: 500px;
-  }
-}
-
-@media (min-width: 900px) {
-  canvas {
-    width: 70%;
-  }
-}
-
-@media (min-width: 1400px) {
-  canvas {
-    width: 60%;
-    height: 60%;
-  }
-
-  body {
-    /* overflow: hidden; */
-  }
-
-  .page {
-    /* overflow: hidden; */
-  }
-}
-
 button {
   background: none;
   color: inherit;
@@ -101,49 +13,68 @@ button {
   outline: inherit;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  touch-action: manipulation;
+}
+
 body {
-  height: 100%;
+  font-family: "Miroslav";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.background-container {
   background-image: url("../img/flag.png");
-  /* background-repeat: no-repeat; */
-  /* background-size: contain; */
-}
-
-.page {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* .aye {
-  margin: 0 auto; 
-  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../img/page.jpg");
-  opacity: 0.1;
-  z-index: 2;
-  position: absolute;
-} */
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.page {
+  text-align: center;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для контраста */
+  border-radius: 10px;
+  padding: 15px;
+}
 
 canvas {
   display: block;
-  position: static;
   margin: 0 auto;
+  border: 2px solid #333;
+  max-width: 100%;
+  max-height: 70vh;
 }
 
-.header {
-  z-index: 5;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+.score {
+  margin: 10px 0;
+  font-size: 24px;
+  color: #f30909;
 }
 
-.header:hover {
+#speed-indicator {
+  top: 10px;
+  right: 10px;
+  color: rgb(240, 4, 4);
+  font-size: 16px;
 }
+
 
 .title {
+  margin-bottom: 10px;
   cursor: pointer;
-  font-family: "Miroslav";
+
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.57) 12%,
@@ -170,7 +101,8 @@ canvas {
 }
 
 .subtitle {
-  font-family: "Miroslav";
+  font-size: 20px;
+  color: #ffffff;
   position: relative;
   display: inline-block;
   -webkit-text-stroke: 0.5px rgb(90, 26, 26);
@@ -182,36 +114,33 @@ canvas {
 
 .mobile-controls {
   display: none;
-  justify-content: center;
-  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-controls > div {
+  display: flex;
+  gap: 50px;
 }
 
 .control-btn {
-  width: 50px;
-  height: 50px;
-  font-size: 20px;
+  width: 70px;
+  height: 70px;
+  font-size: 30px;
   border-radius: 50%;
-  border: none;
-  background: rgba(245, 5, 165, 0.945);
-  color: white;
-  touch-action: manipulation; /* Улучшает отзывчивость на тач */
+  border: 2px solid #333;
+  background: rgba(255, 255, 255, 0.7);
+  color: #333;
+  cursor: pointer;
 }
 
-.absolut_up {
-  text-align: center;
-  padding: 10px;
-}
-
-.flex_button {
-  display: flex;
-  justify-content: center;
-  gap: 70px;
+.control-btn:active {
+  background: rgba(200, 200, 200, 0.7);
 }
 
 @media (max-width: 768px) {
   .mobile-controls {
-    display: block;
-    margin: 0 auto;
+    display: flex;
   }
 
   .muzloo {
